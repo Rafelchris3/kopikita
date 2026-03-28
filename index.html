@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>KopiKita</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        
+     *{
+          margin:0;
+        padding:0;
+        box-sizing:border-box;
+            }
+
+      body{
+     font-family: 'Inter', sans-serif;
+            background:#fafaf9;
+        }
+
+        
+     .navbar{
+     background:#1c1917;
+    padding:15px;
+        }
+
+      .logo{
+          color:orange;
+          font-weight:bold;
+        }
+
+    .nav-links{
+          list-style:none;
+           display:flex;
+        gap:15px;
+        }
+
+    .nav-links a{
+         color:white;
+         text-decoration:none;
+        }
+
+        
+        .hero{
+            text-align:center;
+            padding:50px 20px;
+            background:#1c1917;
+            color:white;
+        }
+
+        .hero span{
+            color:orange;
+        }
+
+        
+        .produk{
+            padding:30px;
+        }
+
+        .card{
+            background:white;
+            padding:15px;
+            margin:10px;
+            border-radius:10px;
+        }
+
+        .card img{
+            width:100%;
+        }
+
+        .price{
+            color:orange;
+            font-weight:bold;
+        }
+
+        
+        .kontak{
+            padding:30px;
+            text-align:center;
+        }
+
+        button{
+            padding:10px 20px;
+            background:green;
+            color:white;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="navbar">
+    <div class="logo">
+        <i class="fas fa-mug-hot"></i> KopiKita
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="pesanan">pesanan</a></li>
+    </ul>
+</div>
+
+
+<div class="hero" id="home">
+    <h1>Ngopi <span>Enak</span> dari Lokal</h1>
+    <p>dukung petani indonesia</p>
+
+
+<div class="produk" id="produk">
+    <h2>Produk</h2>
+
+    <div id="listProduk"></div>
+</div>
+
+
+<div class="kontak" id="kontak">
+    <h2>Kontak</h2>
+    <button onclick="chat()">Chat WhatsApp</button>
+</div>
+
+<script>
+    
+    var produk = [
+        {
+            nama:"Arabica Gayo",
+            harga:55000,
+            gambar:"https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500"
+        },
+        {
+            nama:"Robusta Flores",
+            harga:45000,
+            gambar:"https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500"
+        },
+        {
+            nama:"Toraja",
+            harga:65000,
+            gambar:"https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500"
+        }
+    ];
+
+    
+    var tempat = document.getElementById("listProduk");
+
+    for(var i=0; i<produk.length; i++){
+        var p = produk[i];
+
+        var div = document.createElement("div");
+        div.className = "card";
+
+        div.innerHTML =
+        "<img src='"+p.gambar+"'>" +
+        "<h3>"+p.nama+"</h3>" +
+        "<p class='price'>Rp "+p.harga+"</p>";
+
+        tempat.appendChild(div);
+    }
+
+    
+    function chat(){
+        alert("hubungi wa ya 081234567890");
+    }
+</script>
+
+</body>
+</html>
